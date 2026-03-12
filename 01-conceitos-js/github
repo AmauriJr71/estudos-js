@@ -1,0 +1,74 @@
+Para adicionar o commit especialmente para um arquivo, precisamos seguir a ordem:
+Adiciona apenas o arquivo do array:
+
+git add 02-array.js
+git commit -m "Explicação sobre índices e arrays"
+
+Para adicionar outro commit para outro lugar, 
+
+git add 01-variaveis.js
+git commit -m "Ajuste na nomenclatura de variáveis"
+
+E no final, para enviar tudo:
+
+git push
+
+============================================================================================
+
+ANTES DE DAR O COMMIT, é importante ver o que esta ta na 'fila' 
+
+git status
+
+Arquivos em verde: Prontos para o commit (Stage)
+Arquivos em vermelho: Arquivos alterados, mas que não entrarão no próximo commit
+
+============================================================================================
+
+Se você deu 'git add .' sem querer, insira o:
+
+git reset
+
+Isso tira os arquivos da área de espera (verde) e volta eles para o estado de alterados (vermelho), permitindo que você escolha um por um novamente
+
+============================================================================================
+
+Provavelmente, ao mover arquivos ou tentar organizar, você acabou criando uma pasta "01-conceitos-js" dentro de outra com o mesmo nome. Além disso, as letras "U" e "A" ao lado dos arquivos indicam o estado deles no Git:
+
+U (Untracked): Arquivo novo que o Git ainda não conhece.
+
+A (Added): Arquivo que já está no "ponto" (verde) esperando o commit.
+
+============================================================================================
+
+O Fluxo "Cirúrgico" (Um por um)
+Se você alterou o 03-decisao.js e o petshop.js, mas quer commits separados, faça exatamente assim:
+
+1. Para o primeiro arquivo:
+
+PowerShell
+git add 01-conceitos-js/03-decisao.js
+git commit -m "Explicação sobre estruturas if/else"
+
+
+2. Para o segundo arquivo:
+
+PowerShell
+git add 02-Pratica js/petshop.js
+git commit -m "Iniciando lógica do sistema de petshop"
+
+3. Só agora você envia:
+
+PowerShell
+git push origin main
+
+============================================================================================
+
+Como ter certeza ANTES de comitar?
+Existe um comando que é o seu melhor amigo para conferir o que está "na agulha":
+
+git status
+
+Se o nome do arquivo aparecer em vermelho: Ele não vai entrar no commit.
+
+Se o nome do arquivo aparecer em verde: Ele vai entrar no commit.
+
